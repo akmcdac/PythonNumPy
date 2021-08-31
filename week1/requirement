@@ -11,5 +11,11 @@ Add a requirements.txt in week1 which includes numpy version 1.21or newer5.
 Add a fileass1.py in week1 with the above two lines of codeor some other code which uses NumPy6.Commit and push your local changes to the remote repositoryCommentsKeep your assignments and exercises to the corresponding folder. 
 
 
-This rule applies to all assignments.Acceptance Criteria•Include a .gitignore, LICENSE (MIT) and README.mdin the repository•Includea requirements.txt with numpy version 1.21or newerin theweek1 folder•The week1 folder must also containa numpy.py file with a workingNumPyprogram, the expected outputof the samplecode is [0 1 2 3 4 5 6 7 8 9]•Submit the assignment by pasting a link to the repositoryFailures or resubmissions•You needto meet theaboveacceptance criteria•The repository mustnot contain any files except those mentioned in the instructions(for example no IDE-related files,.pycache files, binaries or differently named copies of files)
+This rule applies to all assignments.Acceptance Criteria
+•Include a .gitignore, LICENSE (MIT) and README.mdin the repository
+•Includea requirements.txt with numpy version 1.21 or newerin theweek1 folder
+•The week1 folder must also containa numpy.py file with a workingNumPyprogram, the expected outputof the samplecode is [0 1 2 3 4 5 6 7 8 9]
+•Submit the assignment by pasting a link to the repositoryFailures or resubmissions
+•You needto meet theaboveacceptance criteria
+•The repository mustnot contain any files except those mentioned in the instructions(for example no IDE-related files,.pycache files, binaries or differently named copies of files)
 
