@@ -1,0 +1,15 @@
+Getting started with gitUsing a version-control system is crucial for developing software within a team. 
+It does not matter if you are working alone or as a member of a larger development team. 
+In this assignment you will create a GitHub repository which you will use for all assignments in the course.GitHub is free for smaller projects butrequires a registration. 
+You may choosewhichever mail you want for the registration.You will also use the NumPy package to showcase your understanding of using pip,the package installer for Python.
+We encourage learning about NumPy if you want to doscientific computing (https://numpy.org/doc/stable/) but for this assignmentyou only need to include something that uses NumPy for example these twolinesof code:
+import numpy as np
+print(np.arange(10))
+
+Instructions1.Create a private GitHub repository with suitable .gitignore, readme and licensefiles2.Add mehttps://github.com/emilwallas a collaborator on your project3.Clone the repository to your local computerand create a folder week14.
+Add a requirements.txt in week1 which includes numpy version 1.21or newer5.
+Add a fileass1.py in week1 with the above two lines of codeor some other code which uses NumPy6.Commit and push your local changes to the remote repositoryCommentsKeep your assignments and exercises to the corresponding folder. 
+
+
+This rule applies to all assignments.Acceptance Criteria•Include a .gitignore, LICENSE (MIT) and README.mdin the repository•Includea requirements.txt with numpy version 1.21or newerin theweek1 folder•The week1 folder must also containa numpy.py file with a workingNumPyprogram, the expected outputof the samplecode is [0 1 2 3 4 5 6 7 8 9]•Submit the assignment by pasting a link to the repositoryFailures or resubmissions•You needto meet theaboveacceptance criteria•The repository mustnot contain any files except those mentioned in the instructions(for example no IDE-related files,.pycache files, binaries or differently named copies of files)
+
