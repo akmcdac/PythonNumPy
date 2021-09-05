@@ -1,0 +1,44 @@
+Exercise2a -Object-Oriented Programming: EncapsulationProcedural programming is perhaps the most intuitive style of programming. You describe a program with a sequence ofstatements,and you canreuse statements by defining functions.It does however have some limitationsand risks. In procedural programming code tends to be concise but sometimes harder to reason about because there is no built-ingrouping of the code and the data.In the worst case, procedural code becomes so complex that it becomes hard to understand and modify without introducing bugs.One of the most important concepts of object-oriented programming(OOP) is encapsulation. This reduces how tightly coupled different parts of the code isand hence allows modifications to be made in one place with less risk of it affecting the rest of the code.Anexampleof code with no encapsulation:
+
+full_name = "Jane Doe"print(f"I am {full_name[-3:]}, {full_name}")
+
+In this case we are using a single variable full_name, and since this variable is not encapsulated in a class there is no guarantee that the same variable isn’t used somewhere else as well, perhaps even updated.What if we would like to store the first and last names separately?
+
+first_name = "Jane"last_name = "Doe"full_name = " ".join([first_name, last_name])
+
+print(f"I am {last_name}, {full_name}")
+
+As you can see, in order to avoid having to change every place where the full_namevariable is used, the author here decided to keep it but define it in terms of the new variables. But what if some other code updates full_name with a new value, then first_name and last_name would keep their old values! This is a trivial example, but in a real-worldapplication this tendency of adding code rather than improving itleadsto poor quality. Encapsulation to the rescue.
+
+class Agent:
+
+def __init__(self):
+
+self._full_name= "Jane Doe"@propertydef full_name(self):
+
+return self._full_nameagent = Agent()
+
+print(f"I am {agent.full_name[-3:]}, {agent.full_name}")
+
+Here weknow for sure that the value is never changed, because it is encapsulated as a property. Let usmake the same modification as above, storing the first and last names separately, andintroduceanotherproperty.We will maintain the same signaturefor the full_name property, which means that no client code needs to be changed.
+
+class Agent:
+def __init__(self):
+
+self._first_name= "Jane"self._last_name= "Doe"@propertydef full_name(self):
+
+return " ".join(self.names)
+
+@property
+def names(self):
+return self._first_name, self._last_nameagent = Agent()
+print(f"I am {agent.names[1]}, {agent.full_name}")
+
+Thefull_name propertycan still be accessedin the same way as before, although its implementation has changed.It is now possible toaccess andupdate the first and last name values, but by convention theseshould be treated as private fieldsand if we were to add setters, anychange would propagate to both properties,avoiding the potential programming error we saw when there was no encapsulation.
+
+Exercise 2a: The phonebook caseSetup
+
+•Create a class Contact whichthe following structure:-Three attributescalled name, _number and __age (Remember the underscore conventions!) and two methods with the property decoratorused for fetching the age and number. Name these get_age and get_number
+
+•Create a second class PhoneBookwith the following structure:-An attribute called _contacts which is set to an empty listin the constructor.-Two methods, add_contact which takes a contact as input and get_contact with a name as input.-Description of the method add_contact: If there is a new user with the same name as an old one, overwrite the old contact, else create anew contact and add it to _contactsTask:-Instantiate three instancesof the contact class, make two of them identical but with different ages-Instantiate the phonebook-Add the contacts to the phonebookvia the add_contact method-Fetch a user from the phonebook usingtheir name -Print the users name and age-Print the amount of objects in _contacts (Hint; should be two not three even though we added three! This is due to functionality of the add_contact method)When done with the above try changing _contacts to a dictionary and modify the add_contact and get_contact methods to accept this format. Keep the exact same functionalities, input parameters and possible return values (this is what is refered to as a methods “signature”)
+

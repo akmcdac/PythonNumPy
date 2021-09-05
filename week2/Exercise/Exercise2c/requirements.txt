@@ -1,0 +1,19 @@
+Object-Oriented Programming: Abstraction
+
+In the last exercise, we defined two classes, one which was a hero and one which was a villainand staged a fight between them. In this exercise we will let them fight in an arena, which we will implement as a class to encapsulate its logic. As the numberof participants growin our wonderful arenait becomes more and more tedious to do all the calls manually, we also want to keep the amount of code as concise as possible.In this exercise we will improve upon our code in the previous exercise as well as make some adjustments to keep a cleaner code structure. We will now make use of the concept of abstract classes.An abstract class can be defined using the built-in package abc(which stands for Abstract-Base-Classes), take the following as an example:
+
+from abc import ABC, abstractmethod
+
+class Location(ABC):
+@property
+@abstractmethoddef 
+actors(self):
+
+PassBy inheriting from the class ABC and denoting the method actors with @abstractmethod this indicates that all classes who inherits the class Location must also contain a method actors which is overriden in the the class who inheritsLocation, otherwise an error will be thrown.Lets put it to a test!Exercise 2c: The Battle of Good and Evil never stopsSetup
+
+•Create a new python file and copy over your code from the previous assignment or from the solution proposal, run and make sure it works
+
+•Create a class called Arena witha constructor instantiating an empty array called self._fighters and two methods called enter(self, fighter) and fight(self)
+
+•Make the CharacterAttributes class an abstract class by inhertingABC and include a new method called use_power with the property and abstractmethod decorators, keep the previous one named set_stats.•Remove the FightActions class TaskA large error with our previous code was that you could instantiate the CharacterAttributes class, but since it was connected to the other two classes that did not make any sense. If you now try to create an instance of CharacterAttributes you will insteadbe thrown an error. To fix this and implement the new arena mechanic do the following:-Remove the previous “ability” methods such as laugh or use_spell, and only have the use_power methodwith the property decoratorin each of your characters classes-After creating an instance of each character add them to the list of participants in the arena class
+-In the fight method of the class Arena loop through the fighters and call their use_power methods, making them incredibly powerful before their coming fight-After all characters have used their power,loop through the fighters once more and deal damage to all others equal to the difference in power_level, but each fighter can only deal damage to the other if their power_level is higher than the other ones!InSummary:You have now learnt more about the value of encapsulation, abstraction and polymorphism as well as inheritance. Good job! There is a real value in learning to use these workflows and often circumvents unforseen problems in development. Good luck on the assignment and well done!

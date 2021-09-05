@@ -1,0 +1,30 @@
+Object-Oriented Programming: Polymorphismand Multiple InheritanceThis exercise is about polymorphism in Python. 
+
+Let’s lookat this example:
+
+class Bird:
+def fight(self, bird):
+print(bird.quack())
+print(self.quack())
+
+class Mallard(Bird):
+def quack(self):
+return "map"class Eider(Bird):
+
+def quack(self):
+return "coo"mallard, eider = Mallard(), Eider()
+mallard.fight(eider)
+
+Due to duck typing, we see polymorphism in action when the mallard fights the eider.Without duck typing, we would not be able to call the quack method in the Bird class, since it is only implemented in the child classes.
+
+Exercise 2b:
+
+An epic battle of good and evilDucktypingis a great way of reducing the amount of code in a project whilst encapsulating a lot of the logic to separate classes. By usage of inheritance you can instead of rewriting the exact same code for eachclass simply inherit the functionality from another class. This is what we will exemplify in the following:Setup•Create a class FightActionswith the method fight(self, defender), leave the content of the method empty for now(type pass inside the method)
+
+•Create a class CharacterAttributeswith a method called set_stats(self, power_level, hit_points)
+
+•Create two subclasses of these two classes, with your favorite Marvel characters (or just make something up). For example,a class called Thanos and DoctorStrange. (Just as you can inherit one class in the example above you can inherit two!). Give them each a constructor and one method each which is a character action, for example a method calledcast_spell for DoctorStrangeor evil_laugh for Thanos!Leave these methods empty for now. Task The task here is to fill in the empty methods, instantiate the characters and stage an epic battle between the two!
+What you need to do is:-In the constructor of each character run the set_statsmethod for CharacterAttributesand set the power_level and hit_points, you also need to code the set_stats method-Have the “ability” methods such as cast_spell perform some action, maybe increase the characters power_level. 
+It is common knowledge that an evil laugh increases your powerlevel.-Code what happends when the two characters fight, for example if one has a higher power_levelthan the other one might take damage equal to the difference in power_level!Make an epic fight and feel free to implement other functionalities such as probability of dodgeing or perhaps there are several heroes fighting together against a mighty foe!
+
+Avengers Assemble!
